@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class LinkedList<T> implements List<T> , Serializable {
-
     private Node<T> last;
     private Node<T> first;
     private int size;

@@ -28,6 +28,6 @@ public class Main {
         System.out.println(Arrays.toString(myIntArray));
 
         System.out.println("Sorted array");
-        System.out.println(Arrays.toString(sorting.SortingUtil.bubbleSort(myIntArray)));
+        System.out.println(Arrays.toString(sorting.SortingUtil.insertSort(myIntArray)));
     }
 }

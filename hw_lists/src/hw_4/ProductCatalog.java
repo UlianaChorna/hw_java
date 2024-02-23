@@ -23,8 +23,7 @@ public class ProductCatalog {
     }
 
     public void sortProduct() {
-//        products.sort((prod1, prod2) -> prod1.name.compareTo(prod2.name));//тут питання чи це буде працювати
-        products.sort(Comparator.comparing(Product::getName)); //так писало  на stackOverFlow
+        products.sort(Comparator.comparing(Product::getName));
     }
 
     public List<Product> filterProducts(String keyword) {

@@ -11,7 +11,9 @@ public class Main {
 
         Thread producerThread = new Thread(() -> {
             while (warehouse.getTotalGoodsAmount().get() > 0) {
-                warehouse.restock();
+                if (warehouse.isAdditionalGoodsNeeded()) {
+                    warehouse.restock();
+                }
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
