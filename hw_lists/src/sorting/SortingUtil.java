@@ -1,8 +1,6 @@
 package sorting;
 
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.List;
 
 public class SortingUtil {
 
@@ -10,7 +8,6 @@ public class SortingUtil {
         Integer[] arr = new Integer[size];
         Random rand = new Random();
         for (int i = 0; i < size; i++) {
-            // Generate random integer between min (inclusive) and max (exclusive)
             arr[i] = rand.nextInt(max - min) + min;
         }
         return arr;

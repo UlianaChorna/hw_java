@@ -11,7 +11,6 @@ public class Shop {
         shopBasket.addItem(Laptop, 1);
         shopBasket.addItem(TV, 1);
 
-
         System.out.println(shopBasket.getTotalAmount());
     }
 }

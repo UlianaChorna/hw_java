@@ -8,13 +8,4 @@ public interface List<T> {
     void addAt(int index, T element);
 
     int size();
-//    void set(int index, T element);
-//
-    T get(int index);
-//
-//    T getFirst();
-//
-//    T getLast();
-//
-//    T remove(int index);
 }

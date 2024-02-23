@@ -15,7 +15,6 @@ public class LinkedList<T> implements List<T> , Serializable {
         public Node(T element) {
             this.element = element;
         }
-
     }
 
     @SafeVarargs
@@ -25,7 +24,6 @@ public class LinkedList<T> implements List<T> , Serializable {
             linkedList.add(e);
         }
         return  linkedList;
-
     }
 
     @Override
@@ -38,7 +36,6 @@ public class LinkedList<T> implements List<T> , Serializable {
             prev.next = newNode;
             this.last = newNode;
         }
-
         size++;
     }
 
@@ -95,5 +92,4 @@ public class LinkedList<T> implements List<T> , Serializable {
     public int size() {
         return this.size;
     }
-
 }
