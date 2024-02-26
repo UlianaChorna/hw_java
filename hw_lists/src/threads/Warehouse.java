@@ -2,7 +2,7 @@ package threads;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public synchronized class Warehouse {
+public class Warehouse {
   private AtomicInteger totalGoodsAmount;
   private final int stockAmount;
   private  AtomicInteger stockAvailableAmount;
@@ -43,7 +43,7 @@ public synchronized class Warehouse {
         return percentageAvailable <= minStockPercentage;
     }
 
-    public void sellGoods(int amount) {
+    public synchronized void sellGoods(int amount) {
         if (amount <= stockAvailableAmount.get()) {
             System.out.println("Sold - " + amount);
             stockAvailableAmount.addAndGet(-amount);
