@@ -2,7 +2,7 @@ package threads;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Warehouse {
+public synchronized class Warehouse {
   private AtomicInteger totalGoodsAmount;
   private final int stockAmount;
   private  AtomicInteger stockAvailableAmount;
