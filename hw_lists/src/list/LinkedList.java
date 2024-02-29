@@ -1,6 +1,7 @@
 package list;
 
 import java.io.Serializable;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public class LinkedList<T> implements List<T> , Serializable {
@@ -33,7 +34,7 @@ public class LinkedList<T> implements List<T> , Serializable {
         } else {
             Node<T> prev = getNodeByIndex(this.size - 1);
             prev.next = newNode;
-            this.last = newNode;
+            last = newNode;
         }
         size++;
     }
@@ -88,7 +89,80 @@ public class LinkedList<T> implements List<T> , Serializable {
         Objects.checkIndex(index, size);
         return getNodeByIndex(index).element;
     }
+
+    @Override
+    public T getFirst() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return  get(0);
+    }
+
+    @Override
+    public T getLast() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return  get(size - 1);
+    }
+
+    @Override
+    public T remove(int index) {
+        Objects.checkIndex(index, size);
+        T removedElement;
+        if ( index == 0) {
+           removedElement = first.element;
+           first = first.next;
+           if (first == null) {
+               last = null;
+           }
+        } else {
+            Node<T> prev = getNodeByIndex(index - 1);
+            removedElement = prev.next.element;
+            prev.next = prev.next.next;
+            if (index == size -1) {
+                last = prev;
+            }
+        }
+
+
+        size--;
+        return  removedElement;
+    }
+
+    @Override
+    public boolean contains(T element) {
+        Node<T> current = first;
+        for (int i = 0; i < size; i++) {
+            if (current.element.equals(element)){
+                return  true;
+            }
+            current = current.next;
+        }
+        return  false;
+    }
+
+    @Override
+    public void clear() {
+        first = last = null;
+        size = 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+       return  first == null;
+    }
+
+
+
     public int size() {
         return this.size;
+    }
+
+    @Override
+    public void  set(int index, T element) {
+        Objects.checkIndex(index, size);
+        Node<T> node = getNodeByIndex(index);
+        node.element = element;
     }
 }

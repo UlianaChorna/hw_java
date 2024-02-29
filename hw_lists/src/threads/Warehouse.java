@@ -43,7 +43,7 @@ public class Warehouse {
         return percentageAvailable <= minStockPercentage;
     }
 
-    public void sellGoods(int amount) {
+    public synchronized void sellGoods(int amount) {
         if (amount <= stockAvailableAmount.get()) {
             System.out.println("Sold - " + amount);
             stockAvailableAmount.addAndGet(-amount);

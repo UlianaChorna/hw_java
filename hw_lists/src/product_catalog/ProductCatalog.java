@@ -1,4 +1,4 @@
-package hw_4;
+package product_catalog;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -17,12 +17,16 @@ public class ProductCatalog {
     }
 
     public void deleteProduct(int index) {
-        if (index >= 0 && index < products.size()) {
-            products.remove(index);
+        products.removeIf(product -> product.getIndex() == index);
+        reindexProducts();
+    }
+    private void reindexProducts() {
+        for (int i = 0; i < products.size(); i++) {
+            products.get(i).setIndex(i);
         }
     }
 
-    public void sortProduct() {
+    public void sortProducts() {
         products.sort(Comparator.comparing(Product::getName));
     }
 
@@ -31,10 +35,14 @@ public class ProductCatalog {
                 .filter(product -> product.getName().contains(keyword))
                 .collect(Collectors.toList());
     }
+    public int getProductCount() {
+        return products.size();
+    }
 
     public void displayProducts() {
         products.forEach(System.out::println);
     }
 }
+
 
 
