@@ -2,7 +2,6 @@ package product_catalog;
 
 public class Product {
     public String name;
-
     private int index;
 
     public Product(String name) {

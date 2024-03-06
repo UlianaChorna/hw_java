@@ -27,12 +27,12 @@ public class ProductCatalog {
     }
 
     public void sortProducts() {
-        products.sort(Comparator.comparing(Product::getName));
+        products.sort(Comparator.comparing(product -> product.getName().toLowerCase()));
     }
 
     public List<Product> filterProducts(String keyword) {
         return products.stream()
-                .filter(product -> product.getName().contains(keyword))
+                .filter(product -> product.getName().toLowerCase().contains(keyword.toLowerCase()))
                 .collect(Collectors.toList());
     }
     public int getProductCount() {

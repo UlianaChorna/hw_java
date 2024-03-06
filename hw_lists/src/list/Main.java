@@ -75,6 +75,7 @@ public class Main {
 
     private static void runPerformanceCheckMyLinkedList(Integer [] ints) {
         List<Integer> myLinkedList = LinkedList.of(ints);
+        System.out.println(myLinkedList);
 
         long startTime = System.nanoTime();
         myLinkedList.add(11);
