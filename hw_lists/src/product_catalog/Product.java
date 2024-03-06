@@ -1,8 +1,7 @@
-package hw_4;
+package product_catalog;
 
 public class Product {
     public String name;
-
     private int index;
 
     public Product(String name) {

@@ -29,7 +29,7 @@ public class SortingUtil {
     }
 
     public static Integer [] insertSort(Integer [] arr) {
-        for (int i = 1; i < arr.length - 1; i++) {
+        for (int i = 1; i < arr.length; i++) {
             int x = arr[i];
             int j = i - 1;
 

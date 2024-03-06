@@ -8,4 +8,19 @@ public interface List<T> {
     void addAt(int index, T element);
 
     int size();
+
+    T get(int index);
+
+    T getFirst();
+    T getLast();
+
+    T remove(int index);
+
+    boolean contains(T element);
+
+    void clear();
+
+    boolean isEmpty();
+
+    void set(int index, T element);
 }
